@@ -53,44 +53,45 @@ const Header = ({course}) => {
 // }
 
 //!en arreglo
-const Content = ({parts, exercises}) => {
+// const Content = ({parts, exercises}) => {
+//   return(
+//     <div>
+//       {parts.map(part => {
+//         return(
+//           <h2>{part}</h2>
+//         )
+//       })}
+//           <ul>
+//             {exercises.map(exercise => {
+//               return(
+//                 <li>{exercise}</li>
+//               )
+//             })}
+//           </ul>
+//     </div>
+//   )
+// }
+
+
+//! intento 2
+const Content = ({part1, exercises1, part2, exercises2, part3, exercises3}) => {
   return(
     <div>
-      {parts.map(part => {
-        return(
-          <h2>{part}</h2>
-        )
-      })}
-          <ul>
-            {exercises.map(exercise => {
-              return(
-                <li>{exercise}</li>
-              )
-            })}
-          </ul>
+      <h2>{part1}</h2>
+    <ul>
+        <li>{exercises1}</li>
+    </ul>
+      <h2>{part2}</h2>
+      <ul>
+        <li>{exercises2}</li>
+    </ul>
+    <h2>{part3}</h2>
+      <ul>
+        <li>{exercises3}</li>
+    </ul>
     </div>
   )
 }
-
-//! intento 2
-// const Content = ({part1}, {exercises1}, {part2}, {exercises2}, {part3}, {exercises3}) => {
-//   return(
-//     <div>
-//       <h2>{part1}</h2>
-//     <ul>
-//         <li>{exercises1}</li>
-//     </ul>
-//       <h2>{part2}</h2>
-//       <ul>
-//         <li>{exercises2}</li>
-//     </ul>
-//     <h2>{part3}</h2>
-//       <ul>
-//         <li>{exercises3}</li>
-//     </ul>
-//     </div>
-//   )
-//}
 
 const Total = ({total}) => {
     return(
@@ -103,9 +104,9 @@ const Total = ({total}) => {
 const App = () => {
   const course = 'Half Stack application development'
   const parts = ['Fundamentals of React', 'Using props to pass data', 'State of a component']
-  // const part1 = 'Fundamentals of React'
-  // const part2 = 'Using props to pass data'
-  // const part3 = 'State of a component'
+  const part1 = 'Fundamentals of React'
+  const part2 = 'Using props to pass data'
+  const part3 = 'State of a component'
   const exercises = [10, 7, 14]
   const exercises1 = 10
   const exercises2 = 7
@@ -113,7 +114,10 @@ const App = () => {
   return(
     <div>
       <Header course = {course}/>
-      <Content parts = {parts} exercises = {exercises}/>
+      {/* con arreglo */}
+      {/* <Content parts = {parts} exercises = {exercises}/> */}
+      {/* sin arreglo */}
+      <Content part1= {part1} part2={part2} part3={part3} exercises1 = {exercises1} exercises2={exercises2} exercises3={exercises3}/>
       <Total total = {exercises1 + exercises2 + exercises3}/>
     </div>
   )
