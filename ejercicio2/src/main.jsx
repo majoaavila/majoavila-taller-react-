@@ -27,8 +27,8 @@ const App = () => {
   const badIncrement = () => setBad(bad + 1)
   //statistics
   const all = good + bad + neutral
-  const average = (good-bad)/all
-  const positive = (good * 100) / all
+  const average = (good-bad)/all | 0
+  const positive = (good * 100) / all | 0
 
   return(
     <div>
@@ -46,6 +46,24 @@ const App = () => {
     </div>
   )
 }
+
+//en clase
+// const Statistics = (props) => {
+//   const {good, neutral, bad} = props
+//   const total = good + neutral + bad
+//   const score = good - bad
+//   // | 0, por si la primera condicion no se cumple, regresa 0
+//   const average = score / total | 0
+//   const positive = good / total * 100 | 0
+
+//   return (
+//     <div>
+//       <p>All: {total}</p>
+//       <p>Average: {average}</p>
+//     </div>
+//   )
+
+// }
 
 export default App
 
